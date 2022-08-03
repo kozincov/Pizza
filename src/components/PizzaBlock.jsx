@@ -1,10 +1,19 @@
 import React from 'react';
 
-const PizzaBlock = ({title, price}) => {
+const PizzaBlock = ({title, price, imageUrl, types, sizes}) => {
     const [countPizza, setCountPizza] = React.useState(0)
+    const [activeSize, setActiveSize] = React.useState(0)
+    const [activeType, setActiveType] = React.useState(0)
+    const typeName = ['тонкое', 'традиционное']
 
     const onClickAddPizza = () => {
         setCountPizza(countPizza + 1)
+    }
+    const onClickActiveSize = (i) => {
+        setActiveSize(i)
+    }
+    const onClickActiveType = (i) => {
+        setActiveType(i)
     }
 
     return (
@@ -12,20 +21,18 @@ const PizzaBlock = ({title, price}) => {
         <div className="pizza-block">
             <img
                 className="pizza-block__image"
-                src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
+                src={imageUrl}
                 alt="Pizza"
             />
             <h4 className="pizza-block__title">{title}</h4>
             <div className="pizza-block__selector">
                 <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    {types.map(typeId => <li onClick={() => onClickActiveType(typeId)}
+                                             className={activeType === typeId ? 'active' : ''}>{typeName[typeId]}</li>)}
                 </ul>
                 <ul>
-                    <li className="active">26 см.
-                    </li>
-                    <li>30 см.</li>
-                    <li>40 см.</li>
+                    {sizes.map((size, i) => <li onClick={() => onClickActiveSize(i)}
+                                                className={activeSize === i ? 'active' : ''}>{size}</li>)}
                 </ul>
             </div>
             <div className="pizza-block__bottom">
