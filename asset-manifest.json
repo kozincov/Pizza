@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Pizza/static/css/main.7bca5713.css",
+    "main.js": "/Pizza/static/js/main.77bea76b.js",
+    "static/media/pizza-logo.svg": "/Pizza/static/media/pizza-logo.28170cd44d142434b06cbbe1a59dd986.svg",
+    "index.html": "/Pizza/index.html",
+    "main.7bca5713.css.map": "/Pizza/static/css/main.7bca5713.css.map",
+    "main.77bea76b.js.map": "/Pizza/static/js/main.77bea76b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bca5713.css",
+    "static/js/main.77bea76b.js"
+  ]
+}
